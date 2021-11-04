@@ -42,8 +42,6 @@ Admitted.
       (* place your code here *)
   .
 
-  (* TODO: check previous exercises: are auxiliary lemmas commented out? *)
-
 (*...*)
 
   (* Prove that the result of filtering is actually filtered *)
