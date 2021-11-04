@@ -1,5 +1,5 @@
 (* Here we'll prove properties of your function-based implementation of dictionary. *)
-Require Import b1. (* TODO: fix import for students *)
+Require Import b1.
 (* If you find out that your implementation is incorrect, 
    go back to the previous file, fix it, 
    then run 'make' and restart this proof to load the new implementation. *)
@@ -50,7 +50,6 @@ End IfProofs.
 
 Section LogicProofs.
 
-  (* TODO: move to lecture? *)
   Lemma neg_equiv (P Q: Prop) (EQUIV: P <-> Q):
     not P <-> not Q.
   Proof.
@@ -73,7 +72,6 @@ Section LogicProofs.
     intros nq p. apply nq, pq, p.
   Qed.
 
-  (* TODO: clarify about the 'proof above' *)
   (* Show that boolean has only two values. 
      Use 'destruct' tactic to perform case splitting. 
      It will generate one goal per splitting result.
@@ -164,7 +162,6 @@ Section UpdProofs.
 
   (* Prove that the updated function applied to the changed key is the new value. *)
   (* To exploit the term definition, use 'unfold' tactic. *)
-  (* TODO: introduce 'rewrite' in lecture *)
   Lemma update_latest (f: nat -> V) (n: nat) (v: V):
     (upd f n v) n = v.
   Proof.
