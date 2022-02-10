@@ -1,6 +1,5 @@
 (********************)
 
-(* Comments for students: *)
 (* The final goal of the exercise is to implement a dictionary (aka map).
    We'll do this incrementally by defining auxiliary functions and testing them. *)
 
@@ -79,7 +78,7 @@ Section Option.
   Proof. tauto. Qed.
 
   (* Implement a function that compares two optional natural numbers. *)
-  (* Use the nat_eq you've defined before *)
+  (* Reuse the nat_eq you've defined before *)
   Definition option_nat_eq (o1 o2: option nat) : bool
   . Admitted.
  (* Replace the previous line with ':= (your implementation) . ' *)
@@ -281,7 +280,10 @@ End NatDict'Tests.
 
 
 
-(* Additional tasks. *)
+(* The tasks below are additional and not required. *)
+
+
+
 (* As you can see, these two implementations comply to the same interface. *)
 (* Yet, since their types are different, we had to write separate test suites, 
    despite they're essentially the same. *)
@@ -320,9 +322,23 @@ Section DictGeneral.
                          option_nat_eq (get ins5ins5rm5 5) None;
                          option_nat_eq (get ins5 3) None
                        ].
+            
+  (* Now we can state that our function-based implementation 
+     complies to Dict interface. *)
+  Instance FunDict: Dict := {
+    D := @nat_dict_fun;
+    new_dict := @new_dict';
+    insert := @insert';
+    remove := @remove';
+    get := @get';
+    contains := @contains';
+  }.                       
+                       
 
-  (* Look how to use 'Instance' keyword to provide class instance. *)
-  (* Define instances of Dict class for function- and list-based implementations. *)
+  (* Define instance of Dict class for the list-based implementation. *)
+   
+      (* place your code here *)
+  
   (* Then, state and prove 'fun_dict_tests' and 'list_dict_tests' lemmas
      by instantiating 'dict_tests' with instances you've just created. 
      These lemmas, as before, should be proved just by 'tauto'. *)
